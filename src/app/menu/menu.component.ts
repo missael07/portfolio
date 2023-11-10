@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
-  title: string = '';
-
-  setTitle(title: string) {
-    this.title = title;
-  }
 }
