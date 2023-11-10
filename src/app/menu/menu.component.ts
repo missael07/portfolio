@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -26,5 +26,21 @@ export class MenuComponent implements AfterViewInit{
 
   setTitle(activeLink: string){
     this.title = activeLink;
+  }
+
+  @ViewChild('enlaceDescarga', { static: false })
+  enlaceDescarga!: ElementRef;
+
+  descargarPDF() {
+    // Ruta relativa al archivo PDF en la carpeta assets
+    const rutaArchivoPDF = 'assets/resume/Resume_Luis_Missael_Padilla.pdf';
+
+    // Configura el enlace para la descarga
+    const link = this.enlaceDescarga.nativeElement;
+    link.href = rutaArchivoPDF;
+    link.download = 'Resume Luis Missael Padilla.pdf';
+
+    // Simula el clic en el enlace para iniciar la descarga
+    link.click();
   }
 }
