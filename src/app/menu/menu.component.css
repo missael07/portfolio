@@ -3,7 +3,5 @@
 }
 
 .link:hover {
-    background-color: #fff;
-    color: #4287a0 !important;
-    box-shadow: 35px 35px 0 10px var(--white);
+    font-size: 35px;
 }
