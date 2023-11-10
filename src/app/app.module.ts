@@ -7,6 +7,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
     ProfileComponent,
     ProjectsComponent,
     ExperienceComponent,
+    SkillsComponent,
+    EducationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
