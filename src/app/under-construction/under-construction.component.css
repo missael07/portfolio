@@ -1,0 +1,17 @@
+.under-construction {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .under-construction h1 {
+    color: #333;
+  }
+  
+  .under-construction p {
+    color: #666;
+  }
+  
+  .under-construction img {
+    width: 300px;
+    margin-top: 20px;
+  }
