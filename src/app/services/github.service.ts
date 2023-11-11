@@ -20,12 +20,14 @@ export class GithubService {
     });
     return this.http.get<Netlify[]>(`${this.apiUrl}`, { headers })
     .pipe( map((resp: Netlify[]) => {
+      console.log(resp)
       const users = resp.map(
         (site) =>
           new NetliFySiteClass(
-            site.name.replaceAll('-',' ').replace('missael padilla',' '),
+            site.name.replaceAll('-',' ').replace('missael padilla',''),
             site.url,
-            site.build_settings.repo_path
+            site.build_settings.repo_url,
+            site.screenshot_url
           )
       );
       return {

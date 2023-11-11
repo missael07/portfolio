@@ -9,12 +9,15 @@ import { LoadingService } from 'src/app/services/loading.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
 })
-export class ProjectsComponent implements OnDestroy{
-  // nfp_HzS4Voo3Z6NTDQQET61uH4Gatt6SSMHae4cf
+export class ProjectsComponent implements OnDestroy {
   repos: any[] = [];
-protected _onDestroy$ = new Subject<void>();
+  isLoading: boolean = true;
+  protected _onDestroy$ = new Subject<void>();
 
-  constructor(private githubService: GithubService, private loadingService: LoadingService){
+  constructor(
+    private githubService: GithubService,
+    private loadingService: LoadingService
+  ) {
     this.getRepos();
   }
 
@@ -22,16 +25,23 @@ protected _onDestroy$ = new Subject<void>();
     this._onDestroy$.next();
     this._onDestroy$.complete();
   }
-  getRepos(){
+  getRepos() {
+    this.isLoading = true;
     this.loadingService.show();
-    this.githubService.getSites().pipe(
-      takeUntil(this._onDestroy$)
-    )
-    .subscribe({
-      next: ({sites}) => {
-        this.repos = sites;
-        this.loadingService.hide();
-      }
-    });
+    this.githubService
+      .getSites()
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe({
+        next: ({ sites }) => {
+          console.log(sites);
+          this.repos = sites.filter((f) => f.name.trim() !== 'portfolio');
+          this.loadingService.hide();
+          this.isLoading = false;
+        },
+      });
+  }
+
+  goToSite(url: string) {
+    window.open(url, '_blank');
   }
 }

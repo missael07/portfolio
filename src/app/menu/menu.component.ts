@@ -6,6 +6,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements AfterViewInit{
+
+  isMenucollapsed = false;
   ngAfterViewInit(): void {
     this.collapseMenu();
   }
