@@ -1,5 +1,8 @@
 <section class="resume-section" id="about">
   <div class="resume-section-content">
+  <div *ngFor="let item of repos">
+    {{ item | json}}
+  </div>
     <app-under-construction></app-under-construction>
   </div>
 </section>
