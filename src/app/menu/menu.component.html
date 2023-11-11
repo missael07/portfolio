@@ -41,12 +41,12 @@
         >
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link js-scroll-trigger link" routerLink="/projects"
-          >Projects</a
+        <a class="nav-link js-scroll-trigger link" routerLink="/portfolio"
+          >Portfolio</a
         >
       </li>
     </ul>
   </div>
   <a #enlaceDescarga style="display: none;"></a>
-<button class="boton-descarga" (click)="descargarPDF()">Download Resume</button>
+<button class="boton-descarga" (click)="descargarPDF()" [disabled]="isDownLoading">Download Resume</button>
 </nav>

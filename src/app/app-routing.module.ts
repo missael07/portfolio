@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '',
     component: ProfileComponent,
   },
-  { path: 'projects', component: ProjectsComponent },
+  { path: 'portfolio', component: ProjectsComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'education', component: EducationComponent },
   { path: 'skills', component: SkillsComponent },
