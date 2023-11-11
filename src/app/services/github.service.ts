@@ -20,7 +20,6 @@ export class GithubService {
     });
     return this.http.get<Netlify[]>(`${this.apiUrl}`, { headers })
     .pipe( map((resp: Netlify[]) => {
-      console.log(resp)
       const users = resp.map(
         (site) =>
           new NetliFySiteClass(

@@ -33,7 +33,6 @@ export class ProjectsComponent implements OnDestroy {
       .pipe(takeUntil(this._onDestroy$))
       .subscribe({
         next: ({ sites }) => {
-          console.log(sites);
           this.repos = sites.filter((f) => f.name.trim() !== 'portfolio');
           this.loadingService.hide();
           this.isLoading = false;
