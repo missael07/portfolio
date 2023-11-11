@@ -4,7 +4,6 @@ import { Observable, map } from 'rxjs';
 import { Netlify } from '../models/netlify';
 import { NetlifySite } from '../models/netlify-sites';
 import { NetliFySiteClass } from '../models/classes/netlify-site-class';
-import { environment } from 'src/enviroments/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   getSites(): Observable<NetlifySite> {
-    const token = environment.tokenNetliFy;
+    const token = 'nfp_HzS4Voo3Z6NTDQQET61uH4Gatt6SSMHae4cf';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -36,7 +35,7 @@ export class GithubService {
   }
 
   getRepositories(): Observable<any[]> {
-    const token = environment.tokenGit;
+    const token = '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';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
