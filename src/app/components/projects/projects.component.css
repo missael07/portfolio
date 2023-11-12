@@ -1,15 +1,14 @@
-.card:hover {
-  cursor: pointer;
-
-}
-
 .portfolio-item {
   display: block;
   position: relative;
   overflow: hidden;
   max-width: 530px;
-  margin-right: 1rem;
-  margin-bottom: 1rem !important;
+  margin-right: 0.6rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.portfolio-item img {
+  height: 20rem;
+  width: 30rem !important;
 }
 .portfolio-item .caption {
   display: flex;
@@ -26,8 +25,9 @@
   margin: auto 2rem 2rem;
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
+  color: #fff;
 }
 .portfolio-item .caption .caption-content p {
   font-weight: 300;

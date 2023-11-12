@@ -1,14 +1,14 @@
 <section class="resume-section" id="about">
   <div class="resume-section-content">
     <div class="text-center" *ngIf="!isLoading">
-            <h2 class="mb-3 text-primary">Recent Projects</h2>
+            <h2 class="mb-3 text-primary">Projects</h2>
     </div>
     <div class="row">
       <div *ngFor="let item of repos" class="col-md-4 col-sm-6">
         <a class="portfolio-item" [href]="item.url" target="_blank">
-          <div class="caption">
+          <div class="caption text-center">
               <div class="caption-content">
-                {{ item.name | titlecase }}
+                <h2>{{ item.name | titlecase }}</h2>
               </div>
           </div>
           <img class="img-fluid" [src]="item.image" alt="..." />
