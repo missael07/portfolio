@@ -6,6 +6,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements AfterViewInit{
+
+  isMenucollapsed = false;
   ngAfterViewInit(): void {
     this.collapseMenu();
   }
@@ -31,7 +33,9 @@ export class MenuComponent implements AfterViewInit{
   @ViewChild('enlaceDescarga', { static: false })
   enlaceDescarga!: ElementRef;
 
+  isDownLoading: boolean = false;
   descargarPDF() {
+    this.isDownLoading = true;
     // Ruta relativa al archivo PDF en la carpeta assets
     const rutaArchivoPDF = 'assets/resume/Resume_Luis_Missael_Padilla.pdf';
 
@@ -42,5 +46,8 @@ export class MenuComponent implements AfterViewInit{
 
     // Simula el clic en el enlace para iniciar la descarga
     link.click();
+    setTimeout(() => {      
+      this.isDownLoading = false;
+    }, 5000);
   }
 }

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary fixed-top" id="sideNav">
+  <button class="boton-descarga" (click)="descargarPDF()" [disabled]="isDownLoading">Download Resume</button>
+
   <a class="navbar-brand js-scroll-trigger" routerLink="/">
-    <span class="d-block d-lg-none link">Missael Padilla</span>
     <span class="d-none d-lg-block"
       ><img
         class="img-fluid img-profile rounded-circle mx-auto mb-2"
@@ -41,12 +42,11 @@
         >
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link js-scroll-trigger link" routerLink="/projects"
-          >Projects</a
+        <a class="nav-link js-scroll-trigger link" routerLink="/portfolio"
+          >Portfolio</a
         >
       </li>
     </ul>
   </div>
   <a #enlaceDescarga style="display: none;"></a>
-<button class="boton-descarga" (click)="descargarPDF()">Descargar PDF</button>
 </nav>

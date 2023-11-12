@@ -8,11 +8,8 @@ import { EducationComponent } from './components/education/education.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ProfileComponent,
-  },
-  { path: 'projects', component: ProjectsComponent },
+  { path: '',component: ProfileComponent},
+  { path: 'portfolio', component: ProjectsComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'education', component: EducationComponent },
   { path: 'skills', component: SkillsComponent },
