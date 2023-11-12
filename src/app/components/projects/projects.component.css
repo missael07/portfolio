@@ -25,8 +25,9 @@
   margin: auto 2rem 2rem;
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
+  color: #fff;
 }
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
