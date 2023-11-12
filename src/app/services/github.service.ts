@@ -20,7 +20,8 @@ export class GithubService {
     });
     return this.http.get<Netlify[]>(`${this.apiUrl}`, { headers })
     .pipe( map((resp: Netlify[]) => {
-      const users = resp.map(
+      console.log(resp);
+      const users = resp.filter(f => f.use_functions === null).map(
         (site) =>
           new NetliFySiteClass(
             site.name.replaceAll('-',' ').replace('missael padilla',''),
